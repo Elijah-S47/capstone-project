@@ -1,9 +1,9 @@
-function Testimonials() {
-    return (
-        <section id="testimonials">
-            <h1>Testimonials</h1>
-        </section>
-    );
+import React from 'react'
+
+const Testimonials = () => {
+  return (
+    <div>Testimonials</div>
+  )
 }
 
-export default Testimonials;
+export default Testimonials

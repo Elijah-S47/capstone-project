@@ -1,9 +1,9 @@
-function About () {
-    return (
-        <section id="about">
-            <h1>About</h1>
-        </section>
-     );
+import React from 'react'
+
+const About = () => {
+  return (
+    <div>About</div>
+  )
 }
 
-export default About;
+export default About

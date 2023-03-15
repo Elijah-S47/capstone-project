@@ -1,9 +1,9 @@
-function Highlights() {
-    return (
-        <section id="Highlights">
-            <h1>Highlights</h1>
-        </section>
-    );
+import React from 'react'
+
+const Highlights = () => {
+  return (
+    <div>Highlights</div>
+  )
 }
 
-export default Highlights;
+export default Highlights
