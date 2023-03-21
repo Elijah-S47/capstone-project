@@ -1,19 +1,17 @@
-import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import './App.css';
-import { Nav, Footer, Hero, Highlights, Testimonials, About } from './components';
-
+import { AboutPage, HomePage, MenuPage } from "./pages";
+import "./App.css";
 
 function App() {
   return (
-    <>
-      <Nav />
-      <Hero />
-      <Highlights/>
-      <Testimonials/>
-      <About/>
-      <Footer/>
-    </>
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<HomePage />} />
+        <Route exact path="/aboutpage" element={<AboutPage />} />
+        <Route exact path="/menupage" element={<MenuPage />} />
+      </Routes>
+    </Router>
   );
 }
 
