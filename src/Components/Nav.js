@@ -9,9 +9,9 @@ function Nav () {
                 <Link color="#495E57" sx={{ padding: { base : '2px', sm: '5px', lg: '10px' }, fontSize: { base: '8px', sm: '15px', md: '20px', lg:'30px'} }} a href="" >Home</Link>
                 <Link color="#495E57" sx={{ padding: { base : '2px', sm: '5px', lg: '10px' }, fontSize: { base: '8px', sm: '15px', md: '20px', lg:'30px'} }} a href="" >About</Link>
                 <Link color="#495E57" sx={{ padding: { base : '2px', sm: '5px', lg: '10px' }, fontSize: { base: '8px', sm: '15px', md: '20px', lg:'30px'} }} a href="">Menu</Link>
-                <Link color="#495E57" sx={{ padding: { base : '2px', sm: '5px', lg: '10px' }, fontSize: { base: '8px', sm: '15px', md: '20px', lg:'30px'} }} >Reservations</Link>
-                <Link color="#495E57" sx={{ padding: { base : '2px', sm: '5px', lg: '10px' }, fontSize: { base: '8px', sm: '15px', md: '20px', lg:'30px'} }} >Order Online</Link>
-                <Link color="#495E57" sx={{ padding: { base : '2px', sm: '5px', lg: '10px' }, fontSize: { base: '8px', sm: '15px', md: '20px', lg:'30px'} }} >Login</Link>
+                <Link color="#495E57" sx={{ padding: { base : '2px', sm: '5px', lg: '10px' }, fontSize: { base: '8px', sm: '15px', md: '20px', lg:'30px'} }} a href="" >Reservations</Link>
+                <Link color="#495E57" sx={{ padding: { base : '2px', sm: '5px', lg: '10px' }, fontSize: { base: '8px', sm: '15px', md: '20px', lg:'30px'} }} a href="" >Order Online</Link>
+                <Link color="#495E57" sx={{ padding: { base : '2px', sm: '5px', lg: '10px' }, fontSize: { base: '8px', sm: '15px', md: '20px', lg:'30px'} }} a href="" >Login</Link>
             </HStack>
     );
 };

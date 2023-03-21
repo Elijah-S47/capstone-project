@@ -33,7 +33,7 @@ const Hero = () => {
         </Button>
       </VStack>
       <Box alignSelf='start' sx={{ padding: { base : '20px', sm: '30px', lg: '40px' }  }} >
-        <Image borderRadius='30em' objectFit='cover' sx={{  width: { base: '180px', sm: '300px', md: '300px', lg: '398px' } }} src={Restauranfood} alt='logo' />
+        <Image borderRadius='2em' objectFit='cover' sx={{  width: { base: '180px', sm: '300px', md: '300px', lg: '398px' } }} src={Restauranfood} alt='logo' />
       </Box>
     </Stack>
   )
