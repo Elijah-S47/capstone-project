@@ -8,10 +8,10 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={<HomePage />} />
-        <Route exact path="/aboutpage" element={<AboutPage />} />
-        <Route exact path="/menupage" element={<MenuPage />} />
-        <Route exact path="/reservationspage" element={<ReservationsPage />} />
+        <Route exact path="/Elijah-S47.github.io/capstone-project/" element={<HomePage />} />
+        <Route exact path="/Elijah-S47.github.io/capstone-project/aboutpage" element={<AboutPage />} />
+        <Route exact path="/Elijah-S47.github.io/capstone-project/menupage" element={<MenuPage />} />
+        <Route exact path="/Elijah-S47.github.io/capstone-project/reservationspage" element={<ReservationsPage />} />
       </Routes>
     </Router>
   );
