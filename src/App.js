@@ -6,7 +6,7 @@ import "./App.css";
 
 function App() {
   return (
-      <Routes>
+      <Routes basename='/capstone-project' >
         <Route exact path="/capstone-project" element={<LandingPage />} />
         <Route exact path="/capstone-project/homepage" element={<HomePage />} />
         <Route exact path="/capstone-project/aboutpage" element={<AboutPage />} />
