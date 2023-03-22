@@ -17,15 +17,18 @@ const About = () => {
     padding= {{ base : '20px', sm: '30px', lg: '40px' }}
     >
       <Heading
+      fontFamily='MarkaziText'
       fontSize={{ base: '28px', sm: '35px', md: '50px', lg:'80px'}}
       color='#000000'
       >Little Lemon</Heading>
       <Heading
+      fontFamily='MarkaziText'
       fontSize={{ base: '20px', sm: '30px', md: '40px', lg:'70px'}}
       color='#000000'
       >Chicago
       </Heading>
       <Text
+      fontFamily='MarkaziText'
       fontSize={{ base: '10px', sm: '15px', md: '20px', lg:'30px'}}
       color='#000000'
       >aliqua dolor do amet sint. Velit officia <br />

@@ -7,7 +7,7 @@ const Testimonials = () => {
   return (
     <div>
       <Box bg='#495E57' display='flex' justifyContent='center'>
-        <Heading color='#333333' size='xl' pt='40px'>Testimonials:</Heading>
+        <Heading fontFamily='MarkaziText' color='#333333' size='xl' pt='40px'>Testimonials:</Heading>
       </Box>
       <Stack px= {{ base : '20px', sm: '30px', lg: '40px' }} p= {{ base : '20px', sm: '30px', lg: '40px' }} spacing='20' height='80vh' bg='#495E57' direction={{ base: 'column', lg: 'row' }} display='flex' justifyContent='center' alignItems='center'>
         <Box borderRadius='1em' bg='#FFFFFF' boxSize='300px'>

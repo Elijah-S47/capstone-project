@@ -22,7 +22,7 @@ const Footer = () => {
       />
       <Stack direction='row' >
         <nav>
-          <Stack>
+          <Stack fontFamily='MarkaziText' >
             <Link a href='./' fontSize={{ base: '12px', lg: '20px' }}>Home</Link>
             <Link a href='./' fontSize={{ base: '12px', lg: '20px' }} >About</Link>
             <Link a href='./' fontSize={{ base: '12px', lg: '20px' }} >Menu</Link>
@@ -32,7 +32,7 @@ const Footer = () => {
           </Stack>
         </nav>
       </Stack>
-      <Box>
+      <Box fontFamily='MarkaziText' >
         <Text
         fontSize={{ base: '12px', lg: '20px' }} >Adress - <br /> 1234 Lemon Ln. Chicago, Illinois
         </Text>

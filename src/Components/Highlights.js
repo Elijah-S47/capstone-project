@@ -9,12 +9,14 @@ const Highlights = () => {
       <Stack direction='row' display='flex' justifyContent='center' padding= {{ base : '20px', sm: '30px', lg: '40px' }}>
         <Stack alignItems='center'>
           <Heading
+          fontFamily='MarkaziText'
           fontSize= {{ base: '10px', sm: '20px', md: '28px', lg:'40px' }}
           paddingEnd= {{ base: '50px', sm:'100px', md: '225px', lg: '325px', xl: '500px' }}
           noOfLines='1'
           >This weeks specials!</Heading>
         </Stack>
         <Button
+          fontFamily='MarkaziText'
           borderRadius='30em'
           _hover={{ bg: '#ebedf0' }}
           bg='#F4CE14'
@@ -25,17 +27,19 @@ const Highlights = () => {
         </Button>
       </Stack>
       <Stack
+      fontFamily='MarkaziText'
       direction={{ base: 'column', lg: 'row' }}
-      px= {{ base : '20px', sm: '30px', lg: '60px', xl:'120px' }}
+      px= {{ base : '20px', sm: '30px', lg: '60px', xl:'140px' }}
       display='flex'
       alignItems='center'
-      spacing='10'
+      spacing={{ base: '10', xl:'20' }}
       paddingBottom='40px'
       >
         <Card borderRadius='2em' bg='#EDEFEE' width='80%' height={{ base: '300px', md: '450px' ,lg:'600px' }}>
           <Image borderRadius='2em' objectFit='cover' src={Greeksalad} alt='greeksalad' height={{ base: '180px', sm: '200px', md:'300px', lg: '400px' }} />
           <Stack display='flex' direction='row'>
             <Heading
+            fontFamily='MarkaziText'
             fontSize= {{ base: '16px', md: '22px', lg:'26px' }}
             >
             Greek salad
@@ -52,6 +56,7 @@ const Highlights = () => {
           <Image borderRadius='2em' objectFit='cover' src={Restauranfood} alt='restauranfood' height={{ base: '180px', sm: '200px', md:'300px', lg: '400px' }} />
           <Stack direction='row'>
             <Heading
+            fontFamily='MarkaziText'
             fontSize= {{ base: '16px', md: '22px', lg:'26px' }}
             >
             Bruschetta
@@ -68,6 +73,7 @@ const Highlights = () => {
           <Image borderRadius='2em' objectFit='cover' src={Lemondessert} alt='lemondessert' height={{ base: '180px', sm: '200px', md:'300px', lg: '400px' }} />
           <Stack direction='row'>
             <Heading
+            fontFamily='MarkaziText'
             fontSize= {{ base: '16px', md: '22px', lg:'26px' }}
             >
             Lemon Dessert

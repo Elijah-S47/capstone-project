@@ -6,13 +6,15 @@ import { Box, Button, Heading, Image, Text, Stack, VStack } from '@chakra-ui/rea
 
 const Hero = () => {
   return (
-    <Stack bg='#495E57' display='flex' flexDirection= 'collumn' justifyContent='center' >
+    <Stack bg='#495E57' display='flex' flexDirection= 'collumn' justifyContent='center' fontFamily='MarkaziText' >
       <VStack alignItems='start' alignContent='start' display='flex' sx={{ padding: { base : '20px', sm: '30px', lg: '40px' }  }} >
         <Heading
-        sx={{ fontSize: { base: '28px', sm: '35px', md: '50px', lg:'80px'} }}
+        fontFamily='MarkaziText'
+        fontSize={{ base: '28px', sm: '35px', md: '50px', lg:'80px'}}
         color='#F4CE14'
         >Little Lemon</Heading>
         <Heading
+        fontFamily='MarkaziText'
         sx={{ fontSize: { base: '20px', sm: '30px', md: '40px', lg:'70px'} }}
         color='#EDEFEE'
         >Chicago

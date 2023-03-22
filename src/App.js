@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import { AboutPage, HomePage, MenuPage } from "./pages";
+import { AboutPage, HomePage, MenuPage, ReservationsPage } from "./pages";
 import "./App.css";
 
 function App() {
@@ -10,6 +10,7 @@ function App() {
         <Route exact path="/" element={<HomePage />} />
         <Route exact path="/aboutpage" element={<AboutPage />} />
         <Route exact path="/menupage" element={<MenuPage />} />
+        <Route exact path="/reservationspage" element={<ReservationsPage />} />
       </Routes>
     </Router>
   );
