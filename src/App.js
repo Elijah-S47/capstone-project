@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import React from 'react'
 
 import { AboutPage, HomePage, MenuPage, ReservationsPage } from "./pages";
 import "./App.css";
