@@ -8,10 +8,10 @@ function App() {
   return (
       <Routes basename='/capstone-project' >
         <Route exact path="/capstone-project" element={<LandingPage />} />
-        <Route exact path="/capstone-project/homepage" element={<HomePage />} />
-        <Route exact path="/capstone-project/aboutpage" element={<AboutPage />} />
-        <Route exact path="/capstone-project/menupage" element={<MenuPage />} />
-        <Route exact path="/capstone-project/reservationspage" element={<ReservationsPage />} />
+        <Route exact path="/homepage" element={<HomePage />} />
+        <Route exact path="/aboutpage" element={<AboutPage />} />
+        <Route exact path="/menupage" element={<MenuPage />} />
+        <Route exact path="/reservationspage" element={<ReservationsPage />} />
       </Routes>
   );
 }
