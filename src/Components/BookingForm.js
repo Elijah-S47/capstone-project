@@ -1,5 +1,4 @@
 import React from 'react'
-import { useState } from 'react'
 
 import { Box, Input, FormControl, FormLabel, Select } from '@chakra-ui/react'
 import { Greeksalad } from '../icons_assets'
