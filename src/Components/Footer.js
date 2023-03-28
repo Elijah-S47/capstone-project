@@ -18,7 +18,7 @@ const Footer = () => {
       borderRadius='1em'
       src={Restaurant}
       alt='restaurant'
-      width={{ base:'200px', md: '300px', lg: '350px' }}
+      width={{ base:'60vw', lg: '350px' }}
       />
       <Stack direction='row' >
         <nav>

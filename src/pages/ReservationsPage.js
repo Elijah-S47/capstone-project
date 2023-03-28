@@ -3,11 +3,11 @@ import React from 'react';
 import { Nav, Footer, BookingForm } from '../components';
 
 
-function ReservationsPage() {
+function ReservationsPage( props ) {
   return (
     <>
       <Nav />
-      <BookingForm />
+      <BookingForm availableTimes={props.availableTimes} dispatch={props.dispatch} />
       <Footer/>
     </>
   );

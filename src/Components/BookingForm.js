@@ -1,9 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-import { Box, Input, FormControl, FormLabel, Select } from '@chakra-ui/react'
+import { Box, Input, FormControl, FormLabel, Select, VStack, Heading } from '@chakra-ui/react'
 import { Greeksalad } from '../icons_assets'
 
-const BookingForm = () => {
+const BookingForm = ( props ) => {
+    const [ formDate, setFormDate ] = useState("")
+    const [ noGuests, setNoGuests ] = useState("1")
+    const [ formTimes, setFormTimes ] = useState("5:00")
+    const [ occasions, setOccasions ] = useState("")
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(formDate, noGuests, formTimes, occasions)
+        setFormDate("")
+        setFormTimes("")
+        setNoGuests("1")
+        setOccasions("")
+    }
+
   return (
     <Box
     display='flex'
@@ -15,42 +29,81 @@ const BookingForm = () => {
     bgRepeat='no-repeat'
     objectFit='cover'
     bgPos='center'
-    p='2em'
+    p='10vmin'
     >
-        <Box
-        padding='2em'
+        <VStack
+        padding='2vmax'
         bg='#FFFFFF'
         borderRadius='1em'
-        height={{ base: '60vh', md:'70vh' }}
-        width={{ base: '30vh', md: '50vh' }}>
+        w='80vmax'
+        maxWidth='800px'
+        >
+            <Heading p='1vmax' fontFamily='MarkaziText' fontSize={{ base: '8vmin', lg:'80px'}} >Reserve a table:</Heading>
             <FormControl
             display='flex'
             flexDirection='column'
             alignItems='center'
-            alignContent='center'>
-                    <FormLabel fontSize={{base: 'xl', md: '2xl'}} htmlFor="res-date" fontFamily='MarkaziText' >Choose date</FormLabel>
-                    <Input type="date" id="res-date" />
-                    <FormLabel fontSize={{base: 'xl', md: '2xl'}} for="res-time" fontFamily='MarkaziText'>Choose time</FormLabel>
-                    <Select id="res-time ">
-                        <option>5:00pm</option>
-                        <option>6:00pm</option>
-                        <option>7:00pm</option>
-                        <option>8:00pm</option>
-                        <option>10:00pm</option>
-                        <option>11:00pm</option>
+            alignContent='center'
+            onSubmit={handleSubmit}
+            gap='1vmax'
+            >
+                    <FormLabel
+                    fontSize= {{ base: '5vmin', lg:'30px'}}
+                    htmlFor="res-date"
+                    fontFamily='MarkaziText'
+                    >Choose date</FormLabel>
+                    <Input
+                    value={formDate}
+                    onChange={(e) => {
+                        setFormDate(e.target.value)
+                        props.dispatch({ formTimes: props.availableTimes} )
+                    }}
+                    type="date"
+                    />
+                    <FormLabel
+                    fontSize={{base: 'xl', md: '2xl'}}
+                    for="res-time"
+                    fontFamily='MarkaziText'
+                    >Choose time</FormLabel>
+                    <Select
+                    value={formTimes}
+                    onChange={(e) => {
+                        setFormTimes(e.target.value)
+                    }}
+                    id="res-time ">
+                        {props.availableTimes.map((time) => (
+                            <option key={time} value={time}>
+                                {time}
+                            </option>
+                        ))}
                     </Select>
-                    <FormLabel fontSize={{base: 'xl', md: '2xl'}} htmlFor="guests" fontFamily='MarkaziText'>Number of guests</FormLabel>
-                    <Input type="number" placeholder="1" min="1" max="10" id="guests" />
-                    <FormLabel fontSize={{base: 'xl', md: '2xl'}} htmlFor="occasion" fontFamily='MarkaziText'>Occasion</FormLabel>
-                    <Select id="occasion">
+                    <FormLabel
+                    fontSize={{base: 'xl', md: '2xl'}}
+                    htmlFor="guests"
+                    fontFamily='MarkaziText'
+                    >Number of guests</FormLabel>
+                    <Input
+                    type="number"
+                    value={noGuests}
+                    onChange={e => setNoGuests(e.target.value)}
+                    min="1"
+                    max="10"
+                    />
+                    <FormLabel
+                    fontSize={{base: 'xl', md: '2xl'}}
+                    htmlFor="occasion"
+                    fontFamily='MarkaziText'
+                    >Occasion</FormLabel>
+                    <Select
+                    value={occasions}
+                    onChange={e => setOccasions(e.target.value)}
+                    >
                         <option>Birthday</option>
                         <option>Anniversary</option>
                     </Select>
-                    <Box p='2.5em'>
-                        <Input fontFamily='MarkaziText' fontSize={{base: 'xl', md: '2xl'}} bg='#F4CE14' type="submit" value="Make Your reservation" />
-                    </Box>
+                    <Input fontFamily='MarkaziText' borderRadius='30em' fontSize={{base: 'xl', md: '2xl'}} bg='#F4CE14' type="submit" onClick={handleSubmit} value="Make Your reservation" />
             </FormControl>
-        </Box>
+        </VStack>
     </Box>
   )
 }
