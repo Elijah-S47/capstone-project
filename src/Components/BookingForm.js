@@ -1,22 +1,41 @@
-import React, { useState } from 'react'
+import React, { useEffect ,useState } from 'react'
+import dayjs from 'dayjs'
 
 import { Box, Input, FormControl, FormLabel, Select, VStack, Heading } from '@chakra-ui/react'
 import { Greeksalad } from '../icons_assets'
 
 const BookingForm = ( props ) => {
-    const [ formDate, setFormDate ] = useState("")
-    const [ noGuests, setNoGuests ] = useState("")
-    const [ formTimes, setFormTimes ] = useState("")
-    const [ occasions, setOccasions ] = useState("")
+    const [formBooking, setFormBooking] = useState({
+        date: dayjs(new Date()).format("YYYY-MM-DD"),
+        time: "",
+        guests: 0,
+        occasion: "",
+      });
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(formDate, noGuests, formTimes, occasions)
-        setFormDate("")
-        setFormTimes("")
-        setNoGuests("")
-        setOccasions("")
-    }
+    e.preventDefault();
+    console.log("submit form");
+    props.submitForm(formBooking);
+    };
+
+    const handleChangeForm = (name, value) => {
+        setFormBooking((state) => ({
+          ...state,
+          [name]: value,
+        }));
+      };
+
+    useEffect(() => {
+    handleChangeForm("time", "");
+    }, [props.availableTimes]);
+
+    const disableSubmit =
+    formBooking.time === "" ||
+    !props.availableTimes.includes(formBooking.time) ||
+    formBooking.guests < 1 ||
+    formBooking.guests > 10 ||
+    formBooking.occasion === "";
+    console.log(new Date(formBooking.date).getDate(), new Date().getDate());
 
   return (
     <Box
@@ -53,12 +72,14 @@ const BookingForm = ( props ) => {
                     fontFamily='MarkaziText'
                     >Choose date</FormLabel>
                     <Input
-                    value={formDate}
+                    type='date'
+                    required
+                    min={dayjs(new Date()).format("YYYY-MM-DD")}
+                    value={formBooking.date}
                     onChange={(e) => {
-                        setFormDate(e.target.value)
-                        props.dispatch({ formTimes: props.availableTimes} )
+                        props.dispatch({ date: new Date(e.target.value) });
+                        handleChangeForm("date", e.target.value);
                     }}
-                    type="date"
                     />
                     <FormLabel
                     fontSize={{base: 'xl', md: '2xl'}}
@@ -66,11 +87,13 @@ const BookingForm = ( props ) => {
                     fontFamily='MarkaziText'
                     >Choose time</FormLabel>
                     <Select
-                    value={formTimes}
-                    onChange={(e) => {
-                        setFormTimes(e.target.value)
-                    }}
+                    required
+                    value={formBooking.time}
+                    onChange={(e) => handleChangeForm("time", e.target.value)}
                     id="res-time ">
+                        <option value="" disabled>
+                            Choose time
+                        </option>
                         {props.availableTimes?.map((time) => (
                             <option key={time} value={time}>
                                 {time}
@@ -85,8 +108,8 @@ const BookingForm = ( props ) => {
                     <Input
                     placeholder='1'
                     type="number"
-                    value={noGuests}
-                    onChange={e => setNoGuests(e.target.value)}
+                    value={formBooking.guests}
+                    onChange={(e) => handleChangeForm("guests", e.target.value)}
                     min="1"
                     max="10"
                     />
@@ -96,13 +119,13 @@ const BookingForm = ( props ) => {
                     fontFamily='MarkaziText'
                     >Occasion</FormLabel>
                     <Select
-                    value={occasions}
-                    onChange={e => setOccasions(e.target.value)}
+                    value={formBooking.occasion}
+                    onChange={(e) => handleChangeForm("occasion", e.target.value)}
                     >
                         <option>Birthday</option>
                         <option>Anniversary</option>
                     </Select>
-                    <Input data-testid="button-submit" fontFamily='MarkaziText' borderRadius='30em' fontSize={{base: 'xl', md: '2xl'}} bg='#F4CE14' type="submit" onClick={handleSubmit} value="Make Your reservation" />
+                    <Input disabled={disableSubmit} onClick={handleSubmit} data-testid="button-submit" fontFamily='MarkaziText' borderRadius='30em' fontSize={{base: 'xl', md: '2xl'}} bg='#F4CE14' type="submit" value="Make Your reservation" />
             </FormControl>
         </VStack>
     </Box>

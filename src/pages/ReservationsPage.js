@@ -7,7 +7,7 @@ function ReservationsPage( props ) {
   return (
     <>
       <Nav />
-      <BookingForm availableTimes={props.availableTimes} dispatch={props.dispatch} />
+      <BookingForm availableTimes={props.availableTimes} dispatch={props.dispatch} submitForm={props.submitForm} />
       <Footer/>
     </>
   );

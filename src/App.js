@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import React, { useReducer, } from 'react'
 import { fetchAPI, submitAPI } from "./api";
 import { useNavigate } from "react-router-dom";
+
 import { LandingPage, AboutPage, HomePage, MenuPage, ReservationsPage } from "./pages";
 import "./App.css";
 
