@@ -22,7 +22,7 @@ function App( ) {
         "bookingData",
         JSON.stringify([...bookingData, formdata])
       );
-      navigate("/confirmed-booking");
+      navigate("/homepage");
     }
   };
 
