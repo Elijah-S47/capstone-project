@@ -1,8 +1,25 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen, fireEvent } from '@testing-library/react';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+import { BookingForm } from './components';
+
+test('Renders the BookingForm heading', () => {
+  render(<BookingForm />);
+
+  const headingElement = screen.getByText("Reserve a table:");
+  expect(headingElement).toBeInTheDocument();
+
+  const dateLabel = screen.getByText("Choose date");
+  expect(dateLabel).toBeInTheDocument();
+
+  const timeLabel = screen.getByText("Choose time");
+  expect(timeLabel).toBeInTheDocument();
+
+  const numberLabel = screen.getByText("Number of guests");
+  expect(numberLabel).toBeInTheDocument();
+
+  const occasionLabel = screen.getByText("Occasion");
+  expect(occasionLabel).toBeInTheDocument();
+
+  const submitInput = screen.getByTestId("button-submit");
+    fireEvent.click(submitInput);
+})

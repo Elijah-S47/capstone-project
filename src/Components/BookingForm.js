@@ -5,8 +5,8 @@ import { Greeksalad } from '../icons_assets'
 
 const BookingForm = ( props ) => {
     const [ formDate, setFormDate ] = useState("")
-    const [ noGuests, setNoGuests ] = useState("1")
-    const [ formTimes, setFormTimes ] = useState("5:00")
+    const [ noGuests, setNoGuests ] = useState("")
+    const [ formTimes, setFormTimes ] = useState("")
     const [ occasions, setOccasions ] = useState("")
 
     const handleSubmit = (e) => {
@@ -14,7 +14,7 @@ const BookingForm = ( props ) => {
         console.log(formDate, noGuests, formTimes, occasions)
         setFormDate("")
         setFormTimes("")
-        setNoGuests("1")
+        setNoGuests("")
         setOccasions("")
     }
 
@@ -38,7 +38,7 @@ const BookingForm = ( props ) => {
         w='80vmax'
         maxWidth='800px'
         >
-            <Heading p='1vmax' fontFamily='MarkaziText' fontSize={{ base: '8vmin', lg:'80px'}} >Reserve a table:</Heading>
+            <Heading as='h1' p='1vmax' fontFamily='MarkaziText' fontSize={{ base: '8vmin', lg:'80px'}} >Reserve a table:</Heading>
             <FormControl
             display='flex'
             flexDirection='column'
@@ -62,7 +62,7 @@ const BookingForm = ( props ) => {
                     />
                     <FormLabel
                     fontSize={{base: 'xl', md: '2xl'}}
-                    for="res-time"
+                    htmlFor="res-time"
                     fontFamily='MarkaziText'
                     >Choose time</FormLabel>
                     <Select
@@ -71,7 +71,7 @@ const BookingForm = ( props ) => {
                         setFormTimes(e.target.value)
                     }}
                     id="res-time ">
-                        {props.availableTimes.map((time) => (
+                        {props.availableTimes?.map((time) => (
                             <option key={time} value={time}>
                                 {time}
                             </option>
@@ -83,6 +83,7 @@ const BookingForm = ( props ) => {
                     fontFamily='MarkaziText'
                     >Number of guests</FormLabel>
                     <Input
+                    placeholder='1'
                     type="number"
                     value={noGuests}
                     onChange={e => setNoGuests(e.target.value)}
@@ -101,7 +102,7 @@ const BookingForm = ( props ) => {
                         <option>Birthday</option>
                         <option>Anniversary</option>
                     </Select>
-                    <Input fontFamily='MarkaziText' borderRadius='30em' fontSize={{base: 'xl', md: '2xl'}} bg='#F4CE14' type="submit" onClick={handleSubmit} value="Make Your reservation" />
+                    <Input data-testid="button-submit" fontFamily='MarkaziText' borderRadius='30em' fontSize={{base: 'xl', md: '2xl'}} bg='#F4CE14' type="submit" onClick={handleSubmit} value="Make Your reservation" />
             </FormControl>
         </VStack>
     </Box>
